@@ -69,7 +69,7 @@ if (scalar(@ARGV) > 0) {
     t/commands/rmd.t
     t/commands/dele.t
     t/commands/mdtm.t
-    t/commands/size.t 
+    t/commands/size.t
     t/commands/mode.t
     t/commands/stru.t
     t/commands/allo.t
@@ -127,7 +127,7 @@ if (scalar(@ARGV) > 0) {
     t/config/dirfakeuser.t
     t/config/displaychdir.t
     t/config/displayconnect.t
-    t/config/displayfiletransfer.t 
+    t/config/displayfiletransfer.t
     t/config/displaylogin.t
     t/config/displayquit.t
     t/config/envvars.t
@@ -533,6 +533,176 @@ if (scalar(@ARGV) > 0) {
       ($feature_ntests == 1 && $feature_tests[0] ne 'testsuite_empty_test')) {
     push(@$test_files, @feature_tests);
   }
+
+# OK:
+#    t/http.t
+#    t/smtp.t
+#    t/ssh2.t
+
+  $test_files = [qw(
+    t/logins.t
+  )];
+
+#     t/commands/user.t
+#     t/commands/pass.t
+#     t/commands/pwd.t
+#     t/commands/cwd.t
+#     t/commands/cdup.t
+#     t/commands/syst.t
+#     t/commands/type.t
+#     t/commands/mkd.t
+#     t/commands/rmd.t
+#     t/commands/dele.t
+#     t/commands/mdtm.t
+#     t/commands/size.t
+#     t/commands/mode.t
+#     t/commands/stru.t
+#     t/commands/allo.t
+#     t/commands/noop.t
+#     t/commands/feat.t
+#     t/commands/help.t
+#     t/commands/quit.t
+#     t/commands/rang.t
+#     t/commands/rnfr.t
+#     t/commands/rnto.t
+#     t/commands/rest.t
+#     t/commands/pasv.t
+#     t/commands/epsv.t
+#     t/commands/port.t
+#     t/commands/eprt.t
+#     t/commands/nlst.t
+#     t/commands/list.t
+#     t/commands/retr.t
+#     t/commands/stor.t
+#     t/commands/stou.t
+#     t/commands/appe.t
+#     t/commands/stat.t
+#     t/commands/abor.t
+#     t/commands/mlsd.t
+#     t/commands/mlst.t
+#     t/commands/mff.t
+#     t/commands/mfmt.t
+#     t/commands/opts.t
+#     t/commands/host.t
+#     t/commands/clnt.t
+#     t/commands/site/chgrp.t
+#     t/commands/site/chmod.t
+#     t/config/accessdenymsg.t
+#     t/config/accessgrantmsg.t
+#     t/config/allowfilter.t
+#     t/config/allowforeignaddress.t
+#     t/config/allowoverwrite.t
+#     t/config/anonrejectpasswords.t
+#     t/config/anonrequirepassword.t
+#     t/config/authaliasonly.t
+#     t/config/authgroupfile.t
+#     t/config/authorder.t
+#     t/config/authuserfile.t
+#     t/config/authusingalias.t
+#     t/config/classes.t
+#     t/config/commandbuffersize.t
+#     t/config/createhome.t
+#     t/config/defaultchdir.t
+#     t/config/defaultroot.t
+#     t/config/deferwelcome.t
+#     t/config/deleteabortedstores.t
+#     t/config/denyfilter.t
+#     t/config/dirfakegroup.t
+#     t/config/dirfakemode.t
+#     t/config/dirfakeuser.t
+#     t/config/displaychdir.t
+#     t/config/displayconnect.t
+#     t/config/displayfiletransfer.t
+#     t/config/displaylogin.t
+#     t/config/displayquit.t
+#     t/config/envvars.t
+#     t/config/factsoptions.t
+#     t/config/groupowner.t
+#     t/config/hiddenstores.t
+#     t/config/hidefiles.t
+#     t/config/hidegroup.t
+#     t/config/hidenoaccess.t
+#     t/config/hideuser.t
+#     t/config/ifdefine.t
+#     t/config/include.t
+#     t/config/listoptions.t
+#     t/config/logoptions.t
+#     t/config/masqueradeaddress.t
+#     t/config/maxclients.t
+#     t/config/maxclientsperclass.t
+#     t/config/maxclientsperhost.t
+#     t/config/maxclientsperuser.t
+#     t/config/maxcommandrate.t
+#     t/config/maxconnectionsperhost.t
+#     t/config/maxinstances.t
+#     t/config/maxloginattempts.t
+#     t/config/maxpasswordsize.t
+#     t/config/maxretrievefilesize.t
+#     t/config/maxstorefilesize.t
+#     t/config/maxtransfersperhost.t
+#     t/config/maxtransfersperuser.t
+#     t/config/order.t
+#     t/config/passiveports.t
+#     t/config/pathallowfilter.t
+#     t/config/pathdenyfilter.t
+#     t/config/pidfile.t
+#     t/config/protocols.t
+#     t/config/regexoptions.t
+#     t/config/requirevalidshell.t
+#     t/config/rewritehome.t
+#     t/config/rlimitchroot.t
+#     t/config/rlimitcpu.t
+#     t/config/rlimitmemory.t
+#     t/config/rlimitopenfiles.t
+#     t/config/rootrevoke.t
+#     t/config/serveradmin.t
+#     t/config/serverident.t
+#     t/config/setenv.t
+#     t/config/showsymlinks.t
+#     t/config/socketoptions.t
+#     t/config/storeuniqueprefix.t
+#     t/config/sysloglevel.t
+#     t/config/timeoutidle.t
+#     t/config/timeoutlogin.t
+#     t/config/timeoutnotransfer.t
+#     t/config/timeoutsession.t
+#     t/config/timeoutstalled.t
+#     t/config/trace.t
+#     t/config/traceoptions.t
+#     t/config/transferrate.t
+#     t/config/umask.t
+#     t/config/useftpusers.t
+#     t/config/useglobbing.t
+#     t/config/useralias.t
+#     t/config/userowner.t
+#     t/config/userpassword.t
+#     t/config/usesendfile.t
+#     t/config/virtualhost.t
+#     t/config/directory/limits.t
+#     t/config/directory/umask.t
+#     t/config/ftpaccess/dele.t
+#     t/config/ftpaccess/empty.t
+#     t/config/ftpaccess/merging.t
+#     t/config/ftpaccess/retr.t
+#     t/config/limit/anonymous.t
+#     t/config/limit/login.t
+#     t/config/limit/mfmt.t
+#     t/config/limit/opts.t
+#     t/config/limit/rmd.t
+#     t/config/limit/xmkd.t
+#     t/config/limit/filters.t
+#     t/config/limit/subdirs.t
+#     t/logging/extendedlog.t
+#     t/logging/serverlog.t
+#     t/logging/systemlog.t
+#     t/logging/transferlog.t
+#     t/signals/term.t
+#     t/signals/hup.t
+#     t/signals/segv.t
+#     t/signals/abrt.t
+#     t/telnet.t
+#     t/utils/ftpcount.t
+#     t/utils/ftpwho.t
 }
 
 $ENV{PROFTPD_TEST} = 1;
